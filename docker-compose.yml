@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  # Nginx
+  nginx:
+    build: ./nginx
+    volumes:
+      - ./web:/src
+      # - ./conf.d:/etc/nginx/conf.d
+      # - /static:/static
+    links:
+      - web
+    ports:
+      - "80:80"
+
+  # This defines a service for the Django app
+  web:
+    build: .
+    volumes:
+      - ./web:/src
+      # - /static:/static
+
+    command: ./run.sh
+    expose:
+      - "8000"
+    links:
+      - db
+    
+  # This defines a service for the Postgres database
+  db:
+    image: postgres

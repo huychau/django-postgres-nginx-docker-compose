@@ -1,0 +1,6 @@
+Django==1.9
+django-jet==1.0.6
+django-tastypie==0.14.0
+django-dotenv==1.4.1
+psycopg2==2.7.3.2
+gunicorn==19.7.0
