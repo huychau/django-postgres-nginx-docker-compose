@@ -3,7 +3,8 @@ version: '3'
 services:
   # Nginx
   nginx:
-    build: ./nginx
+    build: 
+      context: ./nginx
     volumes:
       - ./web:/src
       # - ./conf.d:/etc/nginx/conf.d
@@ -15,14 +16,15 @@ services:
 
   # This defines a service for the Django app
   web:
-    build: .
+    build:
+      context: ./web
     volumes:
       - ./web:/src
       # - /static:/static
 
     command: ./run.sh
-    expose:
-      - "8000"
+    ports:
+      - "8000:8000"
     links:
       - db
     
