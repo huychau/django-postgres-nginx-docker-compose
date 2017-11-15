@@ -14,9 +14,16 @@ Including another URLconf
     2. Import the include() function: from django.conf.urls import url, include
     3. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
+from tastypie.api import Api
+
+from employee.apis import EmployeeResource
+
+v1_api = Api(api_name='v1')
+v1_api.register(EmployeeResource())
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^api/', include(v1_api.urls)),
 ]

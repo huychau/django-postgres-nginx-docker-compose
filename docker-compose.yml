@@ -1,33 +1,36 @@
 version: '3'
 
 services:
+  # This defines a service for the Django app
+  web:
+    build:
+      context: ./web
+    volumes:
+      - ./web:/web
+      # - /static:/static
+
+    command: ./run.sh
+    ports:
+      - "8000:8000"
+
+    links:
+      - db:db
+
   # Nginx
   nginx:
     build: 
       context: ./nginx
     volumes:
-      - ./web:/src
+      - ./web:/web
       # - ./conf.d:/etc/nginx/conf.d
       # - /static:/static
     links:
       - web
     ports:
       - "80:80"
-
-  # This defines a service for the Django app
-  web:
-    build:
-      context: ./web
-    volumes:
-      - ./web:/src
-      # - /static:/static
-
-    command: ./run.sh
-    ports:
-      - "8000:8000"
-    links:
-      - db
     
   # This defines a service for the Postgres database
   db:
     image: postgres
+    ports:
+      - "5432:5432"
