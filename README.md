@@ -42,5 +42,5 @@ docker exec -it web ./manage.py collectstatic --noinput
 ```
 
 ## Open on browser
-- API: http://localhost:8000/api/v1
-- Test coverage: http://localhost:8080
+- API: http://localhost:8080/api/v1
+- Test coverage: http://localhost:9000

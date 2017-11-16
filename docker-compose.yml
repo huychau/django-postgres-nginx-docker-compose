@@ -11,8 +11,7 @@ services:
 
     command: ./bin/run.${ENV}.sh
     ports:
-      - "8000:8000"
-      - "8080:8080"
+      - "9000:9000"
 
     links:
       - db:db
@@ -28,7 +27,7 @@ services:
     links:
       - web:web
     ports:
-      - "80:80"
+      - "8080:80"
     
   # This defines a service for the Postgres database
   db:
