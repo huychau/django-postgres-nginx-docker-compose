@@ -1,4 +1,4 @@
-FROM python:3.5
+FROM python:3.6
 ENV PYTHONUNBUFFERED 1
 
 RUN mkdir /web
@@ -13,10 +13,10 @@ RUN groupadd -r django \
 
 ADD . /web
 
-COPY ./run.sh /run.sh
+COPY ./bin /bin
 
 RUN chown -R django /web
-RUN chmod 775 /run.sh
+RUN chmod +x /bin/*.sh
 
 WORKDIR /web
 

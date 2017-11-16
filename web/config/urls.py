@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from tastypie.api import Api
+
 
 from employee.apis import EmployeeResource
 
@@ -27,3 +29,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include(v1_api.urls)),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
