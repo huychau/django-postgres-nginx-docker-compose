@@ -18,25 +18,27 @@ Create docker-compose file(s) that satifies the following requirements:
 - Persistence the database.
 
 ## How to build
-- Set runner mode
-  - **migrate**: migrating data
+- Set environtment mode
   - **dev**: running development server
   - **test**: running unittest and test coverage
 
 ```
-export RUNNER_MODE=migrate|dev|test
-```
-
-  *Note: Should add `RUNNER_MODE` is `migrate` in first time.*
-
-- Build 
-```
-docker-compose build
+export ENV=dev|test
 ```
 
 - Run
 ```
 docker-compose run
+```
+
+- Load dump data
+```
+docker exec -it web ./manage.py loaddata data.json
+```
+
+- Collect static files
+```
+docker exec -it web ./manage.py collectstatic --noinput
 ```
 
 ## Open on browser

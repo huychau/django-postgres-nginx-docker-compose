@@ -5,11 +5,11 @@ services:
   web:
     build:
       context: ./web
+    container_name: web
     volumes:
       - ./web:/web
-      # - ./static:/static
 
-    command: ./bin/run.${RUNNER_MODE}.sh
+    command: ./bin/run.${ENV}.sh
     ports:
       - "8000:8000"
       - "8080:8080"
@@ -21,10 +21,10 @@ services:
   nginx:
     build: 
       context: ./nginx
+    container_name: nginx
     volumes:
       - ./web:/web
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
-      # - ./static:/static
     links:
       - web:web
     ports:
@@ -33,5 +33,6 @@ services:
   # This defines a service for the Postgres database
   db:
     image: postgres
+    container_name: db
     ports:
       - "5432:5432"
