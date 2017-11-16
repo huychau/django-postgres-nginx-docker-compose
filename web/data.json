@@ -1,0 +1,62 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$24000$r44mo7o0amqI$P2z17JCORRKrQgRasXQem5f3hiLAajZ4QWMI1iNz8BM=",
+      "last_login": "2017-11-16T04:24:21.047Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "admin@domain.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2017-11-16T04:23:58.427Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$24000$493VMjVbqlYF$N0JI0iRdfclcR8gBNoZKlsmdIU9biIGcy505msCnnGo=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "huychau",
+      "first_name": "Huy",
+      "last_name": "Chau",
+      "email": "huychau@domain.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2017-11-16T04:24:40Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "employee.employee",
+    "pk": 1,
+    "fields": {
+      "first_name": "John",
+      "last_name": "Doe",
+      "birthday": "2000-11-14",
+      "gender": "M",
+      "email": "johndoe@domain.com",
+      "status": 1
+    }
+  },
+  {
+    "model": "employee.employee",
+    "pk": 2,
+    "fields": {
+      "first_name": "Huy",
+      "last_name": "Chau",
+      "birthday": "1990-11-05",
+      "gender": "M",
+      "email": "huy.chau@asnet.com.vn",
+      "status": 1
+    }
+  }
+]

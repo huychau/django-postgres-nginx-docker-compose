@@ -9,7 +9,7 @@ services:
       - ./web:/web
       # - ./static:/static
 
-    command: ./bin/run.${ENV}.sh
+    command: ./bin/run.${RUNNER_MODE}.sh
     ports:
       - "8000:8000"
       - "8080:8080"

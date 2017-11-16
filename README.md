@@ -18,10 +18,16 @@ Create docker-compose file(s) that satifies the following requirements:
 - Persistence the database.
 
 ## How to build
-- Set environment
+- Set runner mode
+  - **migrate**: migrating data
+  - **dev**: running development server
+  - **test**: running unittest and test coverage
+
 ```
-export ENV=dev|test
+export RUNNER_MODE=migrate|dev|test
 ```
+
+  *Note: Should add `RUNNER_MODE` is `migrate` in first time.*
 
 - Build 
 ```
