@@ -1,5 +1,5 @@
-# Practice 2: Docker compose stack
-Learn how to use Docker compose syntax and commands.
+# Django + Postgres + Nginx + Gunicorn + Docker Compose 
+Dockerizing Django with Postgres, Gunicorn, and Nginx
 
 ## Stacks
 - Django
